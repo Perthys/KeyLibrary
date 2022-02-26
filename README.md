@@ -17,6 +17,7 @@ end)
 ###### Chad Way Of Doing it 
 
 ```lua
+
 local Key = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/KeyLibrary/main/main.lua'))()
 local X = Key.new(Enum.KeyCode.X, "Test", function(self, Input)
     print(self.Key, self.Type)
