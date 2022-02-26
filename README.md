@@ -87,7 +87,7 @@ local A =  Key.new(Enum.KeyCode.A, {
     end,
 })
 
-local A =  Key.new(Enum.KeyCode.A, {
+local A2 =  Key.new(Enum.KeyCode.A, {
     Name = "Test";
     Handler = function(self, Input)
         print(self.Key, self.Type, self.Name)  
@@ -109,5 +109,22 @@ local Mouse1 =  Key.new(Enum.UserInputType.MouseButton1, {
     end,
     Type = "Hold"
 })
+-- Remove KeyBinds
+A:Unbind()
+A2:Unbind()
+B:Unbind()
+Mouse1:Unbind()
 ```
+## Key.AsyncNew 
 
+Exact Same Syntax As Previously but it returns a promise
+
+**Example**
+
+```lua
+Key.AsyncNew({Enum.KeyCode.A, Enum.KeyCode.B, Enum.KeyCode.C}, function(self, Input) print(self.Key) end, "Hold"):andThen(function(Obj)
+    Obj:Unbind():andThen(function()
+        
+    end)
+end)
+```
