@@ -73,7 +73,7 @@ Example6:Unbind()
 | Name                                                                                                 | Type             | Description                                                                               |
 |------------------------------------------------------------------------------------------------------|------------------|-------------------------------------------------------------------------------------------|
 | Key(s) **{required}**                                                                                | EnumItem / Table | This Argument is used for registering KeyBinds you may pass a table or a single enum item |
-| Data **{required}**<br>=> Name **{optional}**<br>=> Handler **{required}**<br>=> Type **{optional}** | Table            | This Table is used for Passing Data with a different syntax.                              |
+| Data **{required}**<br>=> Name **{optional}**<br>=> Handler **{required}**<br>=> Type **{optional}** | Table            | This Table is used for Passing Data with a different syntax.                              |                          |
 
 
 **Example:**
