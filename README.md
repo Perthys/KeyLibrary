@@ -6,13 +6,14 @@ Better Way To Create Key Binds / Key Handlers With Integrated Support For (KeyHo
 ```lua
 -- Chad Way
 local Key = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/KeyLibrary/main/main.lua'))()
+local UserInputService = game:GetService("UserInputService")
 
 local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B, Enum.KeyCode.C}, function(self, Input)
     print(self.Key)
 end) 
 
 -- Virgin Way
-game:GetService("UserInputService").InputEnded:Connect(function(Input, GameProcessedEvent)
+UserInputService.InputEnded:Connect(function(Input, GameProcessedEvent)
     if Input.KeyCode == Enum.KeyCode.A then
         print("a")
     elseif Input.KeyCode == Enum.KeyCode.B then
@@ -21,6 +22,30 @@ game:GetService("UserInputService").InputEnded:Connect(function(Input, GameProce
         print("b")
     end
 end)
+
+-- Semi Better But Still bad
+local KeyBindHandler = {
+    [Enum.KeyCode.A] = {
+        [1] = function()
+
+        end,
+    }
+}
+
+UserInputService.InputBegan:Connect(function(Input, GameProcessedEvent)
+	if not GameProcessedEvent then
+		if Input.UserInputType == Enum.UserInputType.Keyboard and KeyBindHandler[Input.KeyCode] then
+			for _, func in ipairs(KeyBindHandler[Input.KeyCode]) do
+				func()
+			end
+		elseif KeyBindHandler[Input.UserInputType] then
+			for _, func in ipairs(KeyBindHandler[Input.UserInputType]) do
+				func()
+			end
+		end
+	end
+end)
+
 
 Test:Unbind()
 ```
