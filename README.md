@@ -50,8 +50,18 @@ local Example4 = Key.new({Enum.KeyCode.Z, Enum.KeyCode.X}, "Test", function(self
     print(self.Key, self.Type)
 end, "Toggle") 
 
+local Example5 = Key.new(Enum.UserInputType.MouseButton2, "Test", function(self, Input)
+    print(self.Key, self.Type)
+end) -- Different Input Type
+
+local Example6 = Key.new(Enum.UserInputType.MouseButton1, function(self, Input)
+    print(self.Key, self.Type)
+end) -- Different Input Type Without Name
+
 Example1:Unbind() -- Remove KeyBinds
 Example2:Unbind() 
 Example3:Unbind()
 Example4:Unbind()
+Example5:Unbind()
+Example6:Unbind()
 ```
