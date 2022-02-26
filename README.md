@@ -29,6 +29,22 @@ end)
 local C = Key.new(Enum.KeyCode.C, "Test", function(self, Input)
     print(self.Key)
 end) 
+
+or 
+
+local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, {
+    Name = "Test";
+    Handler = function(self, Input)
+        print(self.Key)
+    end
+})
+
+or 
+
+local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, "Test", function(self, Input)
+    print(self.Key)
+end) 
+
 ```
 
 
