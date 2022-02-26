@@ -7,9 +7,9 @@ game:GetService("UserInputService").InputEnded:Connect(function(Input, GameProce
     if Input.KeyCode == Enum.KeyCode.A then
       print("a")
     elseif Input.KeyCode == Enum.KeyCode.B then
-      print("b"
+      print("b")
     elseif Input.KeyCode == Enum.KeyCode.C then
-      print("b"
+      print("b")
     end
 end)
 ```
