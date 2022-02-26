@@ -22,6 +22,7 @@ local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, function
     print(self.Key)
 end) 
 
+Test:Unbind()
 ```
 
 # Doccumentation
