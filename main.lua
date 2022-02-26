@@ -19,14 +19,12 @@ local TypeHandlers = {
 	["Hold"] = function(self, Input)
 	    print("Test")
     
-        self.LoopState = true;
+            self.LoopState = true;
         
-        task.spawn(function()
             while self.LoopState  do
                 self.Handler(self, Input)
                 task.wait()
-            end
-        end)
+       	    end
 	end,
 	["Tap"] = function(self, Input)
         self.Handler(self, Input);
