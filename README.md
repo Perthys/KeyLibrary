@@ -36,36 +36,10 @@ Test:Unbind()
 ```lua
 local Example1 = Key.new(Enum.KeyCode.X, function(self, Input)
     print(self.Key, self.Type)
-end) -- No KeyBind Type
+end)
 
-local Example2 = Key.new(Enum.KeyCode.Y, "Test", function(self, Input)
-    print(self.Key, self.Type)
-end, "Hold") -- With Name
-
-local Example3 = Key.new({Enum.KeyCode.Z, Enum.KeyCode.X}, function(self, Input)
-    print(self.Key, self.Type)
-end, "Tap") -- Without Name and Multiple KeyBind Syntax
-
-local Example4 = Key.new({Enum.KeyCode.Z, Enum.KeyCode.X}, "Test", function(self, Input)
-    print(self.Key, self.Type)
-end, "Toggle") 
-
-local Example5 = Key.new(Enum.UserInputType.MouseButton2, "Test", function(self, Input)
-    print(self.Key, self.Type)
-end) -- Different Input Type
-
-local Example6 = Key.new(Enum.UserInputType.MouseButton1, function(self, Input)
-    print(self.Key, self.Type)
-end) -- Different Input Type Without Name
-
--- Remove KeyBinds
-
+-- Remove KeyBind
 Example1:Unbind() 
-Example2:Unbind() 
-Example3:Unbind()
-Example4:Unbind()
-Example5:Unbind()
-Example6:Unbind()
 ```
 
 ## Key.new Variant 2
@@ -87,20 +61,6 @@ local A =  Key.new(Enum.KeyCode.A, {
     end,
 })
 
-local A2 =  Key.new(Enum.KeyCode.A, {
-    Name = "Test";
-    Handler = function(self, Input)
-        print(self.Key, self.Type, self.Name)  
-    end,
-})
-
-local B =  Key.new(Enum.KeyCode.B, {
-    Name = "Test";
-    Handler = function(self, Input)
-        print(self.Key, self.Type)  
-    end,
-    Type = "Hold" 
-})
 
 local Mouse1 =  Key.new(Enum.UserInputType.MouseButton1, { 
     Name = "Test";
@@ -110,9 +70,7 @@ local Mouse1 =  Key.new(Enum.UserInputType.MouseButton1, {
     Type = "Hold"
 })
 -- Remove KeyBinds
-A:Unbind()
-A2:Unbind()
-B:Unbind()
+A:Unbind(
 Mouse1:Unbind()
 ```
 ## Key.AsyncNew 
