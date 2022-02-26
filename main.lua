@@ -1,6 +1,5 @@
-local shared = shared or _G -- to be extra extra extra safe
-
-local Promise = nil;
+local shared = shared 
+local Promise = nil; -- Cause roblox intellisense won't shut the fUCK up if i don't intiialize it
 local Success, Error = pcall(function()  -- DO NOT USE PCALL LIKE THIS, I JUST DID IT CAUSE I WAS LAZY
     Promise = loadstring(game:HttpGet('https://raw.githubusercontent.com/evaera/roblox-lua-promise/master/lib/init.lua'))()
 end)
@@ -47,7 +46,7 @@ local EndedInputHandlers = {
 	end,
 }
 
-function Key.new(...)
+function Key.new(...) -- THIS ENTIRE FUNCTION IS SUCH A MESS OF INEFFICIENT CODE but i don't care
     if typeof(select(1, ...)) == "EnumItem" then
         if type(select(2, ...)) ==  "string" then 
             local Args = {...}
