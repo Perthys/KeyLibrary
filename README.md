@@ -1,5 +1,7 @@
 # KeyLibrary
-Better Way To Create Key Binds / Key Handlers
+Better Way To Create Key Binds / Key Handlers With Integrated Support For (KeyHolding, Key Toggling and etc.)
+
+
 
 ```lua
 -- Chad Way
