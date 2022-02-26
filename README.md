@@ -67,3 +67,46 @@ Example4:Unbind()
 Example5:Unbind()
 Example6:Unbind()
 ```
+
+## Key.new Variant 2
+
+| Name                                                                                        | Type             | Description                                                                               |
+|---------------------------------------------------------------------------------------------|------------------|-------------------------------------------------------------------------------------------|
+| Key(s) **{required}**                                                                       | EnumItem / Table | This Argument is used for registering KeyBinds you may pass a table or a single enum item |
+| Data **{required}** => Name **{optional}** => Handler **{required}** => Type **{optional}** | Table            | This Table is used for Passing Data with a different syntax.                              |
+
+**Example:**
+
+```lua
+-- Supports Different Syntax
+local A =  Key.new(Enum.KeyCode.A, {
+    Name = "Test";
+    Handler = function(self, Input)
+        print(self.Key, self.Type, self.Name) 
+    end,
+})
+
+local A =  Key.new(Enum.KeyCode.A, {
+    Name = "Test";
+    Handler = function(self, Input)
+        print(self.Key, self.Type, self.Name)  
+    end,
+})
+
+local B =  Key.new(Enum.KeyCode.B, {
+    Name = "Test";
+    Handler = function(self, Input)
+        print(self.Key, self.Type)  
+    end,
+    Type = "Hold" 
+})
+
+local Mouse1 =  Key.new(Enum.UserInputType.MouseButton1, { 
+    Name = "Test";
+    Handler = function(self, Input)
+        print(self.Key, self.Type)  
+    end,
+    Type = "Hold"
+})
+```
+
