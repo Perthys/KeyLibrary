@@ -30,7 +30,7 @@ local C = Key.new(Enum.KeyCode.C, "Test", function(self, Input)
     print(self.Key)
 end) 
 
-or 
+-- or 
 
 local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, {
     Name = "Test";
@@ -39,7 +39,7 @@ local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, {
     end
 })
 
-or 
+-- or 
 
 local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, "Test", function(self, Input)
     print(self.Key)
