@@ -338,6 +338,10 @@ function Key.AsyncNew(...) -- Would've just forwarded it to key.new but then i c
             local Handler = Args[3] 
             local Type = Args[4] or "Tap"
             
+            if #Keys == 1 then
+                return Key.new(Keys[1], Name, Handler, Type);
+            end
+            
             local MultiArray = {}
                 
             for Index, _Key in pairs(Keys) do
@@ -364,6 +368,10 @@ function Key.AsyncNew(...) -- Would've just forwarded it to key.new but then i c
             local Handler = Data["Handler"]
             
             local MultiArray = {}
+            
+            if #Keys == 1 then
+                return Key.new(Keys[1], Data["Name"], Handler, Type);
+            end
             
             for Index, _Key in pairs(Keys) do
                 if Data["Name"] then
@@ -393,6 +401,10 @@ function Key.AsyncNew(...) -- Would've just forwarded it to key.new but then i c
             local Handler = Args[2]
             
             local Type = Args[3]
+            
+            if #Keys == 1 then
+                return Key.new(Keys[1], Handler, Type);
+            end
             
             local MultiArray = {}
             
