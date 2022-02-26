@@ -18,47 +18,11 @@ end)
 ```lua
 local Key = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/KeyLibrary/main/main.lua'))()
 
-local A = Key.new(Enum.KeyCode.A, "Test", function(self, Input)
-    print(self.Key)
-end) 
-
-local B = Key.new(Enum.KeyCode.B, "Test", function(self, Input)
-    print(self.Key)
-end) 
-
-local C = Key.new(Enum.KeyCode.C, "Test", function(self, Input)
-    print(self.Key)
-end) 
-
--- or 
-
-local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, {
-    Name = "Test";
-    Handler = function(self, Input)
-        print(self.Key)
-    end
-})
-
--- or 
-
 local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, function(self, Input)
     print(self.Key)
 end) 
 
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Doccumentation
 
