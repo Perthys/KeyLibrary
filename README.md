@@ -13,8 +13,38 @@ game:GetService("UserInputService").InputEnded:Connect(function(Input, GameProce
     end
 end)
 ```
+###### Chad Way of doing it 
 
-###### Chad Way Of Doing it 
+```lua
+local Key = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/KeyLibrary/main/main.lua'))()
+
+local A = Key.new(Enum.KeyCode.A, "Test", function(self, Input)
+    print(self.Key)
+end) 
+
+local B = Key.new(Enum.KeyCode.A, "Test", function(self, Input)
+    print(self.Key)
+end) 
+
+local C = Key.new(Enum.KeyCode.A, "Test", function(self, Input)
+    print(self.Key)
+end) 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Doccumentation
 
 ```lua
 local Key = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/KeyLibrary/main/main.lua'))()
