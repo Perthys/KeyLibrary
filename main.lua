@@ -46,12 +46,12 @@ function Key.new(...)
     if type(select(2, ...)) ==  "string" then 
         local Args = {...}
         
-        local Key = Args[1]
-        local Name = Args[2];  if not shared.KeyStorage[Key] then shared.KeyStorage[Key] = {}; end
+        local _Key = Args[1]
+        local Name = Args[2];  if not shared.KeyStorage[_Key] then shared.KeyStorage[_Key] = {}; end
         local Handler = Args[3] 
         local Type = Args[4] or "Tap"
 
-	    if shared.KeyStorage[Key][Name] then
+	    if shared.KeyStorage[_Key][Name] then
 	        if not shared.NameCount[Name] then shared.NameCount[Name] = 0 end
 	        
 	        shared.NameCount[Name] = shared.NameCount[Name] + 1 -- Some Parsers don't support +=
@@ -59,7 +59,7 @@ function Key.new(...)
 	    end
 
 	    local self = {
-		    Key = Key,
+		    Key = _Key,
 		    Name = Name,
 		    Handler = Handler,
 		    Type = Type,
@@ -68,15 +68,15 @@ function Key.new(...)
 
 	    local Meta = setmetatable(self, {__index = Key, __call = Handler});
 
-	    shared.KeyStorage[Key][Name] = Meta;
+	    shared.KeyStorage[_Key][Name] = Meta;
 
 	    return Meta;
     elseif type(select(2, ...)) ==  "table" then 
         local Args = {...}
         
-        local Key = Args[1]; if not shared.KeyStorage[Key] then shared.KeyStorage[Key] = {}; end
+        local _Key = Args[1]; if not shared.KeyStorage[_Key] then shared.KeyStorage[_Key] = {}; end
         
-        local Name = Args[2]["Name"] or #shared.KeyStorage[Key] + 1
+        local Name = Args[2]["Name"] or #shared.KeyStorage[_Key] + 1
         local Handler = Args[2]["Handler"]
         local Type = nil;
         
@@ -86,7 +86,7 @@ function Key.new(...)
             Type = "Tap" 
         end
 
-	    if shared.KeyStorage[Key][Name] then
+	    if shared.KeyStorage[_Key][Name] then
 	        if not shared.NameCount[Name] then shared.NameCount[Name] = 0 end
 	        
 	        shared.NameCount[Name] = shared.NameCount[Name] + 1 -- Some Parsers don't support +=
@@ -94,7 +94,7 @@ function Key.new(...)
 	    end
 
 	    local self = {
-		    Key = Key,
+		    Key = _Key,
 		    Name = Name,
 		    Handler = Handler,
 		    Type = Type,
@@ -103,19 +103,19 @@ function Key.new(...)
 
 	    local Meta = setmetatable(self, {__index = Key, __call = Handler});
 
-	    shared.KeyStorage[Key][Name] = Meta;
+	    shared.KeyStorage[_Key][Name] = Meta;
 
 	    return Meta;
 	    
 	elseif type(select(2, ...)) ==  "function" then 
         local Args = {...}
         
-        local Key = Args[1];  if not shared.KeyStorage[Key] then shared.KeyStorage[Key] = {}; end
-        local Name = #shared.KeyStorage[Key] + 1
+        local _Key = Args[1];  if not shared.KeyStorage[_Key] then shared.KeyStorage[_Key] = {}; end
+        local Name = #shared.KeyStorage[_Key] + 1
         local Handler = Args[2] 
         local Type = Args[3] or "Tap"
 
-	    if shared.KeyStorage[Key][Name] then
+	    if shared.KeyStorage[_Key][Name] then
 	        if not shared.NameCount[Name] then shared.NameCount[Name] = 0 end
 	        
 	        shared.NameCount[Name] = shared.NameCount[Name] + 1 -- Some Parsers don't support +=
@@ -123,7 +123,7 @@ function Key.new(...)
 	    end
 
 	    local self = {
-		    Key = Key,
+		    Key = _Key,
 		    Name = Name,
 		    Handler = Handler,
 		    Type = Type,
@@ -132,13 +132,13 @@ function Key.new(...)
 
 	    local Meta = setmetatable(self, {__index = Key, __call = Handler});
 
-	    shared.KeyStorage[Key][Name] = Meta;
+	    shared.KeyStorage[_Key][Name] = Meta;
 
 	    return Meta;
 	end
 end
 
-function Key:Unbind(self)
+function Key.Unbind(self)
 	shared.KeyStorage[self.Key][self.Name] = nil;
 end
 
