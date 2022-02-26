@@ -18,7 +18,7 @@ end)
 ```lua
 local Key = loadstring(game:HttpGet('https://raw.githubusercontent.com/Perthys/KeyLibrary/main/main.lua'))()
 
-local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, function(self, Input)
+local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B, Enum.KeyCode.C}, function(self, Input)
     print(self.Key)
 end) 
 
