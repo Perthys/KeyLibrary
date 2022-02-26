@@ -58,7 +58,9 @@ local Example6 = Key.new(Enum.UserInputType.MouseButton1, function(self, Input)
     print(self.Key, self.Type)
 end) -- Different Input Type Without Name
 
-Example1:Unbind() -- Remove KeyBinds
+-- Remove KeyBinds
+
+Example1:Unbind() 
 Example2:Unbind() 
 Example3:Unbind()
 Example4:Unbind()
