@@ -160,4 +160,4 @@ UserInputService.InputEnded:Connect(function(Input, GameProcessedEvent)
 	end
 end)
 
-return Key
+return Key, Key.new
