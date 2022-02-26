@@ -17,16 +17,12 @@ local TypeHandlers = {
         end
 	end,
 	["Hold"] = function(self, Input)
-	    print("Test")
-    
-            self.LoopState = true;
+        self.LoopState = true;
         	
-	task.spawn(function()
-            while self.LoopState  do
-                self.Handler(self, Input)
-                task.wait()
-       	    end
-	end)
+        while self.LoopState  do
+            self.Handler(self, Input)
+            task.wait()
+       	end
 	end,
 	["Tap"] = function(self, Input)
         self.Handler(self, Input);
@@ -197,6 +193,8 @@ function Key.new(...)
             
             local Keys = Args[1]
             local Handler = Args[2]
+            
+            local Type = Args[3]
             
             local MultiArray = {}
             
