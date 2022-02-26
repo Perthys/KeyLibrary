@@ -31,22 +31,27 @@ Test:Unbind()
 | Handler **{required}** | Function                                      | This Function is called when the KeyBind is activated.                                                                                                                               |
 | Type **{optional**     | String **{Default: Tap}**                     | This Argument is used for determining the KeyBind type, there are 3 types  {Tap, Toggle, Hold}                                                                  
 
-**Example**
+**Example:**
 
 ```lua
 local Example1 = Key.new(Enum.KeyCode.X, function(self, Input)
     print(self.Key, self.Type)
-end) -- Default Type is Tap
+end) -- No KeyBind Type
 
 local Example2 = Key.new(Enum.KeyCode.Y, "Test", function(self, Input)
     print(self.Key, self.Type)
-end, "Hold")
+end, "Hold") -- With Name
 
 local Example3 = Key.new({Enum.KeyCode.Z, Enum.KeyCode.X}, function(self, Input)
     print(self.Key, self.Type)
-end, "Tap")
+end, "Tap") -- Without Name and Multiple KeyBind Syntax
 
 local Example4 = Key.new({Enum.KeyCode.Z, Enum.KeyCode.X}, "Test", function(self, Input)
     print(self.Key, self.Type)
-end, "Toggle")
+end, "Toggle") 
+
+Example1:Unbind() -- Remove KeyBinds
+Example2:Unbind() 
+Example3:Unbind()
+Example4:Unbind()
 ```
