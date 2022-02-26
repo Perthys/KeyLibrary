@@ -23,6 +23,7 @@ end)
 Test:Unbind()
 ```
 
+## Key.new Variant 1
 | Name                   | Type                                          | Description                                                                                                                                                                          |
 |------------------------|-----------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Key(s) **{required}**  | EnumItem / Table                              | This Argument is used for registering KeyBinds you may pass a table or a single enum item                                                                                            |
