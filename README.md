@@ -41,7 +41,7 @@ local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, {
 
 -- or 
 
-local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, "Test", function(self, Input)
+local Test = Key.new({Enum.KeyCode.A, Enum.KeyCode.B,  Enum.KeyCode.C}, function(self, Input)
     print(self.Key)
 end) 
 
