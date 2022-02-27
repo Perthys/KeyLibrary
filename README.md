@@ -116,7 +116,7 @@ end)
 
 ## Key.NewCombination
 
-**Example
+**Example**
 ```lua
 	local Combination = Key.NewCombination({Enum.KeyCode.A, Enum.KeyCode.B, Enum.KeyCode.C}, "OptionalName", function()
 		-- activated if a,b,c are all activated at the same time
