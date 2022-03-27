@@ -458,7 +458,7 @@ end
 
 shared.InputBegan = 
 UserInputService.InputBegan:Connect(function(Input, GameProcessedEvent)
-	if not GameProcessedEvent then
+	if true then
 		if Input.UserInputType == Enum.UserInputType.Keyboard and shared.KeyStorage[Input.KeyCode] then
 			for _, self in pairs(shared.KeyStorage[Input.KeyCode]) do
 				if TypeHandlers[self.Type]  then
@@ -477,7 +477,7 @@ end)
 
 shared.InputEnded = 
 UserInputService.InputEnded:Connect(function(Input, GameProcessedEvent)
-	if not GameProcessedEvent then
+	if true then
 		if Input.UserInputType == Enum.UserInputType.Keyboard and shared.KeyStorage[Input.KeyCode] then
 			for _, self in pairs(shared.KeyStorage[Input.KeyCode]) do
 				if EndedInputHandlers[self.Type] then
