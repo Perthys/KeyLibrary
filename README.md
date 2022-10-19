@@ -97,7 +97,7 @@ local Mouse1 =  Key.new(Enum.UserInputType.MouseButton1, {
     Type = "Hold"
 })
 -- Remove KeyBinds
-A:Unbind(
+A:Unbind()
 Mouse1:Unbind()
 ```
 ## Key.AsyncNew 
